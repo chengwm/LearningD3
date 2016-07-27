@@ -1,0 +1,22 @@
+Main
+https://d3js.org/
+https://github.com/d3/d3/zipball/master
+
+Usage
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+Training / Tutorials
+https://www.dashingd3js.com/table-of-contents
+
+Cheatsheet
+http://www.jeromecukier.net/wp-content/uploads/2012/10/d3-cheat-sheet.pdf
+
+Reference
+https://github.com/d3/d3/blob/master/API.md
+
+Examples / Samples
+http://techslides.com/over-1000-d3-js-examples-and-demos
+https://bl.ocks.org/
+
+Tools
+http://blockbuilder.org/
