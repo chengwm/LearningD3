@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>D3 Sandbox</title>
+	<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+	<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script> -->
+</head>
+<body>
+	<h1>D3 Test Page</h1>
+	<div style="width:100%; height:100%; background-color:pink;">
+		<p>Hello!</p>
+		<p>Welcome to the Test Page for D3</p>
+		<p>Bunch of p to test</p>
+		<p>Summore p</p>
+		<p>This is it</p>
+		<p>Last p</p>
+	</div>
+	<button onclick="d3()">Button</button>
+
+	<script type="text/javascript">
+		function d3(){
+			d3.selectAll("p").style("color", function() {
+			  return "hsl(" + Math.random() * 360 + ",100%,50%)";
+			});
+		}
+
+	</script>
+
+
+
+</body>
+</html>
