@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>D3 Sandbox</title>
+	<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+	<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script> -->
+</head>
+<body>
+
+	<script type="text/javascript">
+		/*
+			Learning points:
+			- Creating objects using functions in Javascript
+			- Using d3's selector - similar to jQuery and CSS
+			- Attaching data to elements not existing yet via .data(), .enter()
+			- Using attached data to populate attributes of new svg elements
+		*/
+
+
+		function cProp(cx,cy,r,color){
+			this.cx = cx;
+			this.cy = cy;
+			this.r = r;
+			this.color = color;
+		}
+
+		var c1 = new cProp(50,50,50,"lime");
+		var c2 = new cProp(50,50,40,"blue");
+		var c3 = new cProp(50,50,30,"red");
+
+		var circles = [c1,c2,c3];
+
+		var svg = d3.select("body").append("svg").attr("width",100).attr("height",100);
+
+		// data is attached 1st element in array to first element (index 0) in selection
+		var sel = svg.selectAll("circle")			// currently has nothing
+			.data(circles)							// attach data to 3 virtual enter elements for each data in circles
+			.enter()								// realise the enter elements
+			.append("circle");						// add them to body as "circle elements"
+
+		// 1st parameter is the data attached to the element being processed
+		// 2nd parameter is index of the processed element in the selection
+		sel.attr("fill", function (d){return d.color})
+			.attr("cx", function (d){return d.cx})
+			.attr("cy", function (d){return d.cy})
+			.attr("r", function (d){return d.r});
+
+	</script>
+</body>
+</html>
